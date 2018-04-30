@@ -1,0 +1,56 @@
+<div style="text-align:left">
+    <h2>
+        {{RoleTitle}}
+    </h2>
+</div>
+ <ul>
+    <li *ngFor="let role of roles" (click)="onSelect(role)">
+        <span>{{role.RoleName}}</span>
+    </li>
+</ul>
+<!--{{roles.RoleName}
+{{roles.RoleCode}} -->
+
+<!--<li *ngFor="let User of Users">
+    {{ roles.RoleName }}
+</li>-->
+<!-- <div id="usersRole">
+    <div>
+        <h2>
+            {{RoleUserTitle}}
+        </h2>
+    </div>
+    <div class="row">
+        <table id="tblusersRole" class="table table-striped col-xs-12">
+            <thead>
+            <tr>
+                <th>
+                    <span>
+                        Last Name
+                </th>
+                <th>
+                    <span>
+                        First Name
+                </th>
+                <th>
+                    <span>
+                        Delete
+                    </span>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="row in users" ng-if="users.length > 0">
+                <td>{{row.NameFirst}}</td>
+                <td>{{row.NameLast}}</td>
+            </tr>
+            <tr ng-if="users.length == 0">
+                <td align="center" colspan="4">
+                    No  users are available
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div> -->
+
