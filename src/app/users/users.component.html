@@ -1,3 +1,32 @@
-<p>
-  users works!
-</p>
+
+
+
+<div class="search-field text-center">
+
+               <mat-form-field>
+              <input matInput (keyup)="applyFilter($event.target.value)" 
+              placeholder="Enter to search">
+              <mat-icon matSuffix >search</mat-icon>
+            </mat-form-field>
+           
+    
+</div>
+
+<div>
+<mat-grid-list cols="4" rowHeight="100px">
+  <mat-grid-tile [colspan]="1" [rowspan]="5" [style.background]="'lightblue'">
+    Area for cards
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="3" [rowspan]="1" [style.background]="'lightgreen'">
+    User Details
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="3" [rowspan]="4" [style.background]="'lightpink'">
+    Area for table
+  </mat-grid-tile>
+
+</mat-grid-list>
+</div>
+
+
+
+

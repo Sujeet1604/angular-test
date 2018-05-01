@@ -1,0 +1,230 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.body-container{
+    margin-top: 65pt;
+    margin-left: 2%;
+    margin-right: 2%;
+    background: white;
+    height: 80%;
+    padding: 2%;
+}
+
+.example-toolbar {
+  position: fixed;
+  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  z-index: 2;
+}
+
+
+h3.example-app-name {
+  margin-left: 10px;
+  margin-top: 35px;
+  padding-bottom: 20px;
+  color: #2196F3;
+}
+
+.header-theme{
+  background: #2196F3;
+  color:#fff;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+
+.example-icon {
+  padding: 0 30px;
+  font-size: 1.8em;
+  cursor: pointer;
+}
+
+
+.nav-link,.nav-link:visited{
+  color:#fff !important;
+}
+
+/* Used for styling Search-box on navigation bar*/
+.search-box{
+  margin-left: 40px;
+  width: 100%;
+}
+
+.search-width{
+  width: 50%;
+}
+
+/* Used for styling of logo-button to equal padding as that of top & bottom on navigation bar*/
+.logo-button{
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+/*Used for menu buttons on Navigation bars i.e. Prodops, Devops & BDF-ELK*/
+.menu-button, .user-display{
+  margin-left: 20px;
+  font-family: "Proxima Nova", Arial, sans-serif;
+  font-size: 20px;
+}
+
+.user-display
+{
+  margin-left: 72%;
+}
+
+.example-is-mobile .example-toolbar {
+  position: fixed;
+  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  z-index: 2;
+}
+
+
+.example-sidenav-container {
+  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+     causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+  flex: 1;
+}
+
+.example-is-mobile .example-sidenav-container {
+  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+     `<body>` to be our scrolling element for mobile layouts. */
+  flex: 1 0 auto;
+}
+
+.nav-link,.nav-link:visited{
+  color:#fff !important;
+}
+.row-spacer{
+  margin-bottom: 20px;
+}
+
+.dialog-button{
+  margin-left: 30px;
+}
+
+.list-icon{
+  margin: 10px;
+}
+
+
+.align-span{
+  float: right;
+  flex: 1 1 auto;
+  
+}
+
+.example-sidenav{
+  margin-top: 60px;
+}
+  
+
+.home-icon{
+  padding: 10px 0px;
+  margin-left: 5px;
+  font-size: 1.7em;
+  margin-bottom: 20px;
+  color: #2196F3;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.align-items{
+    display: flex;
+    align-items: center;
+}
+
+.notifications-card{
+  border: 3px solid lightgray;
+  top: 70px;
+  right: 23px;
+  width: 350px;
+  padding: 0px !important;
+  position: fixed !important;
+  z-index: 10000;
+}
+
+.notifications-header{
+  padding-top: 12px;
+  border-bottom: 2px solid #e7e7e7;
+}
+
+.notify-title{
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.notify-content, .account-content{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin: 0px !important;
+  border-bottom: 2px solid #e7e7e7;
+}
+
+.project-build-icon{
+  font-size: 20px;
+  color:#5CB85C;
+  margin-left: 0px;
+  margin-right: 5px;
+}
+
+.notify-actions{
+  text-align: right;
+  margin-right: 0px !important;
+  margin-bottom: 0px !important;
+}
+
+.project-activity-button{
+  font-weight: normal;
+  font-size: 12px;
+}
+
+.account-card{
+  top: 70px;
+  right: 5px;
+  position: fixed !important;
+  width: 250px;
+  padding: 0px !important;
+  z-index: 10000; 
+  border: 3px solid lightgray;
+}
+
+.account-header{
+  padding-top: 12px;
+  margin-left: 8px !important;
+}
+
+.account-title{
+  width: 85%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.account-email-icon{
+  font-size: 20px;
+  margin-left: 20px;
+  margin-right: 5px;
+}
+
+.account-actions{
+  text-align: center;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+
+}
+
+.logout-button{
+  width: 80%;
+  font-weight: 500;
+  font-size: 15px;
+}
+

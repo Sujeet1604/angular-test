@@ -1,0 +1,9 @@
+
+<h4 mat-dialog-title class="text-center">Are you sure you want to Logout?</h4>
+<mat-dialog-content></mat-dialog-content>
+<mat-dialog-actions class="dialog-button">
+  <button mat-raised-button color="primary" [mat-dialog-close]="true" (click)="logout()">YES</button>
+  <button mat-raised-button color="accent"  mat-dialog-close (click)="onNoClick()">NO</button>
+  <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+  
+</mat-dialog-actions>

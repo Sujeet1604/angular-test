@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { RolesService } from '../roles.service';
+import { RolesService } from '../services/roles.service';
 import { Observable } from 'rxjs/Rx';
-import { Role } from '../Role';
-import { Users } from '../Users';
+import { Role } from '../services/Role';
+import { Users } from '../services/Users';
 
 @Component({
     selector: 'app-roles',
@@ -22,7 +22,7 @@ export class RolesComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.getRoles();
+        //this.getRoles();
         // this.getUsersByRole(this.roleId);
     }
 
