@@ -11,67 +11,64 @@
 </div>
 
 <div>
-<mat-grid-list cols="4" rowHeight="100px">
+<mat-grid-list cols="4" rowHeight="100px" *ngIf="roles">
   <mat-grid-tile [colspan]="1" [rowspan]="5" >
       <mat-grid-tile-header>
           Roles:
     </mat-grid-tile-header>
             <mat-chip-list class="mat-chip-list-stacked" aria-orientation="vertical">
-                <mat-chip class="role-chip">Role 1</mat-chip>
-                <mat-chip class="role-chip">Role 2</mat-chip>
-                <mat-chip class="role-chip">Role 3</mat-chip>
-
-                <mat-chip class="role-chip">Role 4</mat-chip>
-                <mat-chip class="role-chip">Role 5</mat-chip>
-                <mat-chip class="role-chip">Role 6</mat-chip>
-
+                <mat-chip  *ngFor="let role of roles" (click)="getRoleDetails(role)" class="role-chip">{{role.roleName || ''}}</mat-chip>
+                
             </mat-chip-list>
             
 
   </mat-grid-tile>
-  <mat-grid-tile [colspan]="3" [rowspan]="1" >
+  <mat-grid-tile [colspan]="3" [rowspan]="1" *ngIf="roleSelected">
      
           <mat-card class="role-card">
               <mat-card-title>
                   Role Name:
               </mat-card-title>
-              <mat-card-content>Role 115</mat-card-content>
+              <mat-card-content>{{roleSelected.roleName || ''}}</mat-card-content>
           </mat-card>
           <mat-card class="role-card">
               <mat-card-title>
                   Role Code:
               </mat-card-title>
-              <mat-card-content>115</mat-card-content>
+              <mat-card-content>{{roleSelected.roleId || ''}}</mat-card-content>
           </mat-card>
     
    
   </mat-grid-tile>
-  <mat-grid-tile [colspan]="3" [rowspan]="4">
+  <mat-grid-tile [colspan]="3" [rowspan]="4" >
+         <mat-grid-tile-header>
+          Users with Role:
+    </mat-grid-tile-header>
     
-    <div class="example-container mat-elevation-z8" >
-  <mat-table   #table [dataSource]="dataSource" matSort>
+    <div class="example-container mat-elevation-z8"  [hidden]="!roleSelected" >
+  <mat-table   #table [dataSource]="dataSource"  matSort>
 
     <!-- Position Column -->
     <ng-container matColumnDef="position">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> No. </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header> <h3>No.</h3> </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
     </ng-container>
 
     <!-- Name Column -->
     <ng-container matColumnDef="name">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header> <h3>Name</h3> </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
     </ng-container>
 
     <!-- Weight Column -->
     <ng-container matColumnDef="weight">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Weight </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header> <h3>Weight</h3>  </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
     </ng-container>
 
     <!-- Symbol Column -->
     <ng-container matColumnDef="symbol">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Symbol </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header> <h3>Symbol</h3>  </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
     </ng-container>
 
@@ -81,7 +78,7 @@
    
   </mat-table>
 
-   <mat-paginator #paginator [length]="pageSize" 
+   <mat-paginator [length]="pageSize" [pageIndex]="0"
               [pageSize]="pageLength" [pageSizeOptions]="[5, 10, 25, 100]"
               (page)="pageEvent = $event;testPage();"></mat-paginator> 
 

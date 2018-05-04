@@ -5,14 +5,15 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 //importing angular material
+import { MatPaginatorModule,MatSortModule } from '@angular/material';
+
+import { MatTableModule } from '@angular/material/table';
 import {MatDialogModule,MatListModule,MatButtonModule,MatFormFieldModule,MatSelectModule,MatInputModule,
   MatIconModule, MatCheckboxModule, MatChipsModule,MatGridListModule, MatCardModule, MatProgressSpinnerModule,
  MatStepperModule, MatSidenavModule, MatTabsModule, MatMenuModule, MatToolbarModule,
   MatTooltipModule, MatSnackBarModule} from '@angular/material';
 
-import { MatPaginatorModule } from '@angular/material';
 
-import { MatTableModule } from '@angular/material/table';
 
 //importing components
 
@@ -63,7 +64,8 @@ import { Overlay } from './services/overlay-service';
     MatListModule,
     MatDialogModule,
     MatTableModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatSortModule
     ],
     providers: [RolesService, Overlay],
   bootstrap: [AppComponent]

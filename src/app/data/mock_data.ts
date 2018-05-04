@@ -29,11 +29,19 @@ const ROLE_DATA= [
   {position: 20, name: 'Calcium', weight: 40.078, symbol: 'Ca'},
 ];
 
+const ROLES= [
+  {"roleId":"role555","roleName":"Role 1"},
+  {"roleId":"role85","roleName":"Role 2"},
+  {"roleId":"role6565","roleName":"Role 3"},
+  {"roleId":"role879","roleName":"Role 4"},
+  {"roleId":"role898","roleName":"Role 5"},
 
+]
 
 export const mockData = {
     "log_data":log_data,
-    "ROLE_DATA":ROLE_DATA
+    "ROLE_DATA":ROLE_DATA,
+    "ROLES":ROLES
     
 };
 
