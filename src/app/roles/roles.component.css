@@ -1,0 +1,21 @@
+.role-chip{
+    width: 100px;
+    text-align: center;
+}
+
+.role-card{
+    width: 50%;
+    margin: 2%;
+}
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  overflow: auto;
+  max-height: 500px;
+}
+
+.mat-header-cell.mat-sort-header-sorted {
+  color: black;
+}

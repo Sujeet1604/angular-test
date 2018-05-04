@@ -6,10 +6,14 @@ import { HttpClientModule } from '@angular/common/http';
 
 //importing angular material
 import {MatDialogModule,MatListModule,MatButtonModule,MatFormFieldModule,MatSelectModule,MatInputModule,
-  MatIconModule, MatCheckboxModule, MatChipsModule,MatGridListModule, MatCardModule, MatProgressSpinnerModule, MatStepperModule, MatSidenavModule, MatTabsModule, MatMenuModule, MatToolbarModule,
+  MatIconModule, MatCheckboxModule, MatChipsModule,MatGridListModule, MatCardModule, MatProgressSpinnerModule,
+ MatStepperModule, MatSidenavModule, MatTabsModule, MatMenuModule, MatToolbarModule,
   MatTooltipModule, MatSnackBarModule} from '@angular/material';
 
+import { MatPaginatorModule } from '@angular/material';
+
 import { MatTableModule } from '@angular/material/table';
+
 //importing components
 
 import { AppComponent } from './app.component';
@@ -37,6 +41,7 @@ import { Overlay } from './services/overlay-service';
       HttpClientModule,
       BrowserAnimationsModule,
 
+    MatPaginatorModule,
     MatMenuModule,
     MatButtonModule, 
     MatCheckboxModule,
