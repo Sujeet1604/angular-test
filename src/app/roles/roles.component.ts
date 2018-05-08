@@ -7,7 +7,7 @@ import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import { Role } from '../services/Role';
 import { Users } from '../services/Users';
 import { Overlay } from '../services/overlay-service';
-import { mockData } from '../data/mock_data';
+//import { mockData } from '../data/mock_data';
 
 @Component({
     selector: 'app-roles',
@@ -34,9 +34,9 @@ export class RolesComponent implements OnInit {
     
     this._overlay.activateOverlay(true,'sk-folding-cube');
 
-    setTimeout(() => {this.initMyRolesTable(mockData.ROLE_DATA);;this._overlay.activateOverlay(false,'');},500);
+    //setTimeout(() => {this.initMyRolesTable(mockData.ROLE_DATA);;this._overlay.activateOverlay(false,'');},500);
 
-    /*
+    
     this._rolesService.getUsersByRoleId(roleId).subscribe(
         data => { 
             this.initMyRolesTable(data);
@@ -48,7 +48,7 @@ export class RolesComponent implements OnInit {
         }
     );
 
-    */
+    
 }
 
   getRoleDetails=(role)=>{
@@ -85,8 +85,8 @@ export class RolesComponent implements OnInit {
     ngOnInit() {      
         setTimeout(() => {this.initSetupTable();},500);
 
-        //this.roles = this.getRoles(); // 1. uncomment this and comment below line
-         setTimeout(() => {this.roles=mockData.ROLES;},500);
+        this.roles = this.getRoles(); 
+         //setTimeout(() => {this.roles=mockData.ROLES;},500);
         
     }
 
