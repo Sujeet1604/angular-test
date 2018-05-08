@@ -1,5 +1,66 @@
+<div class="search-field text-center">
+            
+            <mat-form-field>
+            <mat-label>Find a User:</mat-label>
+            <input matInput placeholder="Enter User Name" [(ngModel)]="userToFind" type="text">
+            <mat-icon matSuffix (click)="findUser(userToFind)" matTooltip="Click to find user.">search</mat-icon>
+            <mat-hint align="end">Enter user name e.g. 'John Smith' , then click search </mat-hint>
+            
+            </mat-form-field>   
+</div>
 
-<h1>Users component</h1>
+<div class="">
+<mat-grid-list class="user-detail-grid" cols="6" rowHeight="7:1" *ngIf="userInfo">
+  
+  <mat-grid-tile [colspan]="6" [rowspan]="2" >
+
+    <div class="user-detail-container text-center">
+      <span class="user-details">
+        <span class="user-bold">User:</span> <span> {{userInfo.Username}} ({{userInfo.UserId}})</span>
+      </span>
+
+      <span class="user-details">
+        <span class="user-bold">Email:</span> <span> {{userInfo.Email}}</span>
+      </span>
+
+      <span class="user-details">
+        <span class="user-bold">Phone:</span> <span> {{userInfo.Phone}}</span>
+      </span>
+    </div>
+    
+  </mat-grid-tile>
+
+  <mat-grid-tile  [colspan]="6" [rowspan]="4" >
+
+          <div class=" text-center">
+                  <mat-form-field>
+                    <mat-label>Status: {{userStatus}}</mat-label>
+                      <mat-select [(ngModel)]="userStatus" placeholder="Status">
+                        <mat-option value="Active">Active</mat-option>
+                        <mat-option value="Inactive">Inactive</mat-option>
+                      </mat-select>
+                </mat-form-field>
+
+                  <mat-form-field>
+                    <mat-label>Roles:</mat-label>
+                      <mat-select class="user-role-list"  placeholder="Role">
+                        <mat-option *ngFor="let role of roles" 
+                        value="role.RoleId">{{role.RoleName}}</mat-option>
+                        
+                      </mat-select>
+                </mat-form-field>
+
+
+          </div>
+  
+    
+  </mat-grid-tile>
+
+
+</mat-grid-list>
+
+</div>
+
 
 
 

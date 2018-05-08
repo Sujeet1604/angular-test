@@ -4,7 +4,6 @@ import {ChangeDetectorRef} from '@angular/core';
 import {ViewEncapsulation} from '@angular/core'; 
 import {ActivatedRoute,Router} from '@angular/router';
 
-import {mockData} from '../data/mock_data';
 import {MatDialog, MatDialogRef} from '@angular/material';
 
 

@@ -1,4 +1,3 @@
-
 const log_data=[
   {name:'file_01', status: 'Running'},
   {name: 'file_02', status: 'Stopped'},
@@ -6,43 +5,43 @@ const log_data=[
   {name: 'file_04', status: 'Running'}
 ]
 
-const ROLE_DATA= [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-  {position: 11, name: 'Sodium', weight: 22.9897, symbol: 'Na'},
-  {position: 12, name: 'Magnesium', weight: 24.305, symbol: 'Mg'},
-  {position: 13, name: 'Aluminum', weight: 26.9815, symbol: 'Al'},
-  {position: 14, name: 'Silicon', weight: 28.0855, symbol: 'Si'},
-  {position: 15, name: 'Phosphorus', weight: 30.9738, symbol: 'P'},
-  {position: 16, name: 'Sulfur', weight: 32.065, symbol: 'S'},
-  {position: 17, name: 'Chlorine', weight: 35.453, symbol: 'Cl'},
-  {position: 18, name: 'Argon', weight: 39.948, symbol: 'Ar'},
-  {position: 19, name: 'Potassium', weight: 39.0983, symbol: 'K'},
-  {position: 20, name: 'Calcium', weight: 40.078, symbol: 'Ca'},
-];
-
-const ROLES= [
-  {"roleId":"role555","roleName":"Role 1"},
-  {"roleId":"role85","roleName":"Role 2"},
-  {"roleId":"role6565","roleName":"Role 3"},
-  {"roleId":"role879","roleName":"Role 4"},
-  {"roleId":"role898","roleName":"Role 5"},
-
+const user_details=[
+  {UserId:'US1568', Username: 'Monica', Email:'abc@def.com', Phone:'+01-5655-441'}
 ]
+
+const user_roles=[
+  {RoleId:'11', RoleName: 'Role 1', RoleCode:'role-11'},
+  {RoleId:'12', RoleName: 'Role 2', RoleCode:'role-12'},
+  {RoleId:'13', RoleName: 'Role 3', RoleCode:'role-13'},
+  {RoleId:'14', RoleName: 'Role 4', RoleCode:'role-14'},
+  {RoleId:'15', RoleName: 'Role 5', RoleCode:'role-15'},
+  {RoleId:'16', RoleName: 'Role 6', RoleCode:'role-16'},
+  {RoleId:'17', RoleName: 'Role 7', RoleCode:'role-17'}
+]
+
+const ROLE_DATA = [{ "UserId": 1, "Username": "Chintamo", "Email": "chintala.monica12@gmail.com", "NameFirst": "Monica", "NameLast": "Chintala", "Phone": "000000000" },
+    { "UserId": 3, "Username": "Chinta66", "Email": "chintala.monica152@gmail.com", "NameFirst": "Monica", "NameLast": "Chintala", "Phone": "000000000" },
+    { "UserId": 4, "Username": "Monica123", "Email": "Monica.test@gmail.com", "NameFirst": "Monica", "NameLast": "ccgcgcgcg", "Phone": "cffgc" },
+{ "UserId": 5, "Username": "Hello123", "Email": "Heel@gmail.com", "NameFirst": "Heelo", "NameLast": "123", "Phone": "3387844jhfjf" }]
+
+const ROLES = [{ "RoleId": 1, "RoleName": "test123", "RoleCode": "heeloo" }, { "RoleId": 4, "RoleName": "testssss", "RoleCode": "dlkudgdgdgdd" },
+    { "RoleId": 5, "RoleName": "testsdd", "RoleCode": "dlkudddgdgdgdd" }, { "RoleId": 6, "RoleName": "tddestsdd", "RoleCode": "dlkudddg12dgdgdd" },    
+    { "RoleId": 7, "RoleName": "test1", "RoleCode": "testcode" },
+    { "RoleId": 8, "RoleName": "test2", "RoleCode": "testcode2" },
+    { "RoleId": 9, "RoleName": "test3", "RoleCode": "testcode3" },
+    { "RoleId": 10, "RoleName": "test4", "RoleCode": "testcode4" }, { "RoleId": 11, "RoleName": "test5", "RoleCode": "testcode5" },
+    { "RoleId": 12, "RoleName": "eeeeeeeeeeeeeee", "RoleCode": "testcode6" }, { "RoleId": 13, "RoleName": "teststs988e8w", "RoleCode": "eee" },
+    { "RoleId": 19, "RoleName": "tetette66666666666", "RoleCode": "test" }, { "RoleId": 20, "RoleName": "tetetette", "RoleCode": "kcdnfcj" },
+    { "RoleId": 21, "RoleName": "fdcldklvn", "RoleCode": "djbdj" }, { "RoleId": 22, "RoleName": "dhdd", "RoleCode": "cmcfvbch" },
+    { "RoleId": 23, "RoleName": "", "RoleCode": "" }]
+
+const User = [{ "UserName": 1, "Email": "Monica.test@gmail.com", "NameFirst": "test123", "NameLast": "heeloo", "Phone": "1234" }]
 
 export const mockData = {
     "log_data":log_data,
     "ROLE_DATA":ROLE_DATA,
-    "ROLES":ROLES
-    
+    "ROLES": ROLES,
+    "User": User ,
+    "user_details":user_details,
+    "user_roles":user_roles
 };
-
-

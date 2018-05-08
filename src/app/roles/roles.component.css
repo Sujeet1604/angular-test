@@ -1,26 +1,61 @@
 .role-chip{
-    width: 100px;
     text-align: center;
+    background-color:rgb(228, 164, 121) ;
+    font-size: 22px;
+    width: auto;
 }
 
 .role-card{
-    width: 50%;
+    width: 25%;
     margin: 2%;
-    height: 50%;
+    height: auto;
+    /* height: 20% !important; */
 }
 
-.example-container {
+.example-container-roles {
   display: flex;
   flex-direction: column;
-  min-width: 300px;
+  min-width: 80%;
   overflow: auto;
-  max-height: 500px;
+  max-height: 310px;
+  margin-top: 5%;
+  border: grey 1px solid;
 }
 
 .mat-header-cell.mat-sort-header-sorted {
   color: black;
 }
 
-.mat-sort-header-arrow {
-margin:15px 0 0 6px !important;
+.mat-header-cell{
+  font-size: large;
+  color: #2962FF;
 }
+
+.mat-sort-header-arrow {
+margin:0 0 0 -20px !important;
+}
+
+.mat-table{
+  height: 500px!important;
+}
+
+.table-header{
+    font-size: 25px;
+    text-align: center;
+    background:white!important;
+    color:black!important;
+    display: block!important;
+    font-family: inherit;
+    font-weight: 600;
+    margin: 20px 0 -25px 0;
+}
+
+.ghostElement{
+  visibility: hidden !important;
+}
+
+.mat-chip-list{
+  padding: 0 5% 0 5%;
+  height: 450px;
+}
+

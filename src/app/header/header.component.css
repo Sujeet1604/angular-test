@@ -10,16 +10,15 @@
 
 .body-container{
     margin-top: 65pt;
-    margin-left: 2%;
+    margin-left: 1%;
     margin-right: 2%;
     background: white;
-    height: 80%;
-    padding: 2%;
+    /* height: 100%; */
+    padding: 0%;
 }
 
 .example-toolbar {
   position: fixed;
-  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
   z-index: 2;
 }
 
@@ -32,7 +31,7 @@ h3.example-app-name {
 }
 
 .header-theme{
-  background: #2196F3;
+  background: Green;
   color:#fff;
 }
 .example-spacer {
@@ -81,20 +80,15 @@ h3.example-app-name {
 
 .example-is-mobile .example-toolbar {
   position: fixed;
-  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
   z-index: 2;
 }
 
 
 .example-sidenav-container {
-  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
-     causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
   flex: 1;
 }
 
 .example-is-mobile .example-sidenav-container {
-  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
-     `<body>` to be our scrolling element for mobile layouts. */
   flex: 1 0 auto;
 }
 

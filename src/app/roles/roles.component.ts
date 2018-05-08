@@ -1,12 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { RolesService } from '../services/roles.service';
 import {MatPaginator, MatSort, MatTableDataSource, PageEvent} from '@angular/material';
-//import {SelectionModel, DataSource} from '@angular/cdk/collections';
+import {MatSnackBar} from '@angular/material';
 import { Observable } from 'rxjs/Rx';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import { Role } from '../services/Role';
 import { Users } from '../services/Users';
-import {mockData} from '../data/mock_data';
+import { Overlay } from '../services/overlay-service';
+import { mockData } from '../data/mock_data';
 
 @Component({
     selector: 'app-roles',
@@ -16,114 +17,117 @@ import {mockData} from '../data/mock_data';
 export class RolesComponent implements OnInit {
     public dataSource:any;
     public selection:any;
-    
-    public RoleTitle = 'Available Roles';
-    public RoleUserTitle = 'Users With Role';
 
     public roles: any;
     public users: Users[];
-    public id =5;
-    public roleId = 1;
-    public pageLength:any;
-    public pageSize:any;
     public roleSelected:any;
-    
-
-    displayedColumns = ['position', 'name', 'weight', 'symbol'];
+    public userRoles: Role[];
+ 
+    displayedColumns = ['NameLast', 'NameFirst', 'weight'];
     pageEvent: PageEvent;
     
-     initMyRolesTable(ELEMENT_DATA){
-        
-         this.pageLength = 5;
-        this.pageSize = ELEMENT_DATA.length;
-        this.dataSource.data = ELEMENT_DATA;
-      
-        console.log(this.dataSource);
-        
-        
-        
-        
+     initMyRolesTable(ELEMENT_DATA){     
+        this.dataSource.data = ELEMENT_DATA;    
   }
 
+  getUsersByRole(roleId: number) {
+    
+    this._overlay.activateOverlay(true,'sk-folding-cube');
+
+    setTimeout(() => {this.initMyRolesTable(mockData.ROLE_DATA);;this._overlay.activateOverlay(false,'');},500);
+
+    /*
+    this._rolesService.getUsersByRoleId(roleId).subscribe(
+        data => { 
+            this.initMyRolesTable(data);
+            if(data.length==0){this.openSnackBar('No user exist for the selected role','Dismiss')}
+         },
+        err => console.error(err),
+        () => {console.log('Done loading Users');
+         this._overlay.activateOverlay(false,'');
+        }
+    );
+
+    */
+}
 
   getRoleDetails=(role)=>{
     this.roleSelected=role;
-    //setTimeout(() => { this.initMyRolesTable(mockData.ROLE_DATA);},500);
-    this.initMyRolesTable(mockData.ROLE_DATA);
+    this.getUsersByRole(role.RoleId);
   }
 
-  testPage =()=>{
-    console.log(this.dataSource);  
-  }
+  removeUser=(user)=>{
+    this.getRolesByUser(user.UserId);
+  };
 
-
-    constructor(private _rolesService: RolesService) { 
+    constructor(private _rolesService: RolesService, private _overlay: Overlay,public snackBar: MatSnackBar) { 
     }
 
-    @ViewChild(MatPaginator) paginator: MatPaginator;
     @ViewChild(MatSort) sort: MatSort;
 
+    openSnackBar(message: string, action: string) {
+        this.snackBar.open(message, action, {
+          duration: 4000,
+        });
+      }
+
     applyFilter(filterValue: string) {
-    filterValue = filterValue.trim(); // Remove whitespace
-    filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
+    filterValue = filterValue.trim();
+    filterValue = filterValue.toLowerCase();
     this.dataSource.filter = filterValue;
   }
 
   initSetupTable=()=>{
-        this.dataSource = new MatTableDataSource();
-       
+        this.dataSource = new MatTableDataSource();    
         this.dataSource.sort = this.sort;
-        this.dataSource.paginator = this.paginator;
   }
 
-    ngOnInit() {
-        
+    ngOnInit() {      
         setTimeout(() => {this.initSetupTable();},500);
+
+        //this.roles = this.getRoles(); // 1. uncomment this and comment below line
+         setTimeout(() => {this.roles=mockData.ROLES;},500);
         
-        //this.initMyRolesTable(mockData.ROLE_DATA);
-        //this.getRoles();
-         this.roles = mockData.ROLES;
-        // this.getUsersByRole(this.roleId);
     }
 
-    getRoles() {
+    getRoles() {        
+        this._overlay.activateOverlay(true,'sk-folding-cube');
         this._rolesService.getRoles().subscribe(
             data => { this.roles = data },
             err => console.error(err),
-            () => console.log('Done loading Roles')
+            () => {console.log('Done loading Roles'); 
+            this._overlay.activateOverlay(false,'');
+        }
         );
     }
 
-    getUsersByRole(roleId: number) {
-        this._rolesService.getUsersByRoleId(roleId).subscribe(
-            data => { this.users = data },
-            err => console.error(err),
-            () => console.log('Done loading Users')
-        );
-    }
+    validateDelete=(userInfo,userId)=>{
+        const selectedRoleID = this.roleSelected.RoleId
+        let filteredRoles = userInfo.filter(function(role){
+                return role.RoleId!==selectedRoleID;
+        });
+        this.DeleteUserRoles(userId,filteredRoles)
+    };
 
-    deleteUserFromRole(id: number): void {
-        if (confirm("Are you sure you want to delete Role?")){
-        this._rolesService.deleteUserRole(this.id).subscribe(
-            data => {
-             this.getRoles();
-             return true;
-            },
-            error => {
-            console.error("Error deleting Role!");
-            return Observable.throw(error);
+    getRolesByUser(userId: number) { 
+        this._overlay.activateOverlay(true,'sk-folding-cube');
+        this._rolesService.getRolesByUserId(userId).subscribe(    
+               data => { 
+                   this.validateDelete(data,userId);
+                },             
+      err => console.error(err),             
+        () => {console.log('Done loading user roles');
+        this._overlay.activateOverlay(false,'');
+    }
+    );         
+    }    
+
+      DeleteUserRoles(userId: number, userRoles) {
+        const userRolesIDs = userRoles.map(id => id.RoleId);
+        this._overlay.activateOverlay(true,'sk-folding-cube');            
+        this._rolesService.DeleteUserRoles(userId, userRolesIDs).subscribe(
+             );
+             this._overlay.activateOverlay(false,'');
+           //setTimeout(() => { this._overlay.activateOverlay(false,'');},500)
             }
-        );
-      }
-    }
-}
-
-
-
-export interface Element {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
-
+     }

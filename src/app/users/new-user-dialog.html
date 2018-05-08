@@ -1,0 +1,9 @@
+<h1 mat-dialog-title>New User!!</h1>
+<div mat-dialog-content>
+  <p>Do you want to add {{data.name}} as a new User ??</p>
+  
+</div>
+<div mat-dialog-actions>
+  <button mat-button cdkFocusInitial color="warn" (click)="onNoClick()">Not Now</button>
+  <button mat-button color="primary" [mat-dialog-close]="data.name" >Add User</button>
+</div>

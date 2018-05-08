@@ -16,19 +16,13 @@
         (closed)="toggleSidebar('closed')">
           <mat-nav-list>
                
-                <a mat-list-item routerLink="/Roles">
-                    <mat-icon>supervisor_account</mat-icon><span style="padding-left:5px;">Roles</span> 
-                    
-                    
-                </a>
-             
-                   
-               <mat-divider></mat-divider>
-
                 <a mat-list-item routerLink="/Users">
-                   <mat-icon>wc</mat-icon><span style="padding-left:5px;">Users</span>
-                     
-                    
+                    <mat-icon>wc</mat-icon><span style="padding-left:5px;">Users</span>                     
+                </a>
+
+               <mat-divider></mat-divider>
+                <a mat-list-item routerLink="/Roles">
+                   <mat-icon>supervisor_account</mat-icon><span style="padding-left:5px;">Roles</span>                   
                 </a>
                 <mat-divider></mat-divider>
  
@@ -38,7 +32,6 @@
 
         <mat-sidenav-content>
              <div class="container body-container">
-                    <!--For Internal Routing of body part only -->
                     <router-outlet></router-outlet>
 
              </div>
