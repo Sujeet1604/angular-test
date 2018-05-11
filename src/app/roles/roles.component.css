@@ -5,11 +5,26 @@
     width: auto;
 }
 
+
+.role-heading{
+ color:grey!important;
+ margin-left:2%;
+}
+
+.role-detail-head{
+ justify-content: center !important;
+ width: 80%;
+
+}
+
+.role-head{
+      height: 10%!important;
+}
+
 .role-card{
-    width: 25%;
-    margin: 2%;
-    height: auto;
-    /* height: 20% !important; */
+  font-size: 24px;
+  font-weight: 400;
+  margin-left:10%;
 }
 
 .example-container-roles {
@@ -31,12 +46,14 @@
   color: #2962FF;
 }
 
-.mat-sort-header-arrow {
-margin:0 0 0 -20px !important;
-}
+
 
 .mat-table{
-  height: 500px!important;
+    border: 1px grey dotted;
+    height: 80%;
+    position: absolute;
+    width: 80%;
+    margin-top: 2%;
 }
 
 .table-header{
@@ -58,4 +75,8 @@ margin:0 0 0 -20px !important;
   padding: 0 5% 0 5%;
   height: 450px;
 }
+
+
+
+
 

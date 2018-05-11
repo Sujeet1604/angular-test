@@ -1,27 +1,30 @@
 <div>
-    <mat-card-title>
-            <h2>Available Roles</h2>
-    </mat-card-title>
-<mat-grid-list cols="4" rowHeight="100px" *ngIf="roles">
-  <mat-grid-tile [colspan]="1" [rowspan]="5" >    
+  <mat-grid-list cols="4" rowHeight="7:1" >
+    <mat-grid-tile class="role-head"  [colspan]="4" [rowspan]="2" > 
+            <div class="role-heading" ><h2>Available Roles</h2></div>
+
+            <div class="text-center role-detail-head" *ngIf="roleSelected" [ngClass]="dataSource.data.length?'':'ghostElement'">
+              <span class="role-card">
+                    {{roleSelected.RoleName || ''}}
+              </span>
+              <span class="role-card">
+               {{roleSelected.RoleCode || ''}}
+              </span>
+            </div>
+    </mat-grid-tile>
+<!--<mat-grid-list cols="4" rowHeight="7:1" *ngIf="roles">-->
+  <mat-grid-tile [colspan]="1" [rowspan]="17" >    
   <mat-chip-list class="mat-chip-list-stacked scroll-box" *ngIf="roles" aria-orientation="vertical">
             <mat-chip  *ngFor="let role of roles" (click)="getRoleDetails(role)" class="role-chip">{{role.RoleName}}</mat-chip>
   </mat-chip-list>            
   </mat-grid-tile>
-  <mat-grid-tile [colspan]="3"  *ngIf="roleSelected" [ngClass]="dataSource.data.length?'':'ghostElement'"> 
-               <mat-card-title class="role-card">
-                    {{roleSelected.RoleName || ''}}
-              </mat-card-title>
-              <mat-card-title class="role-card">
-               {{roleSelected.RoleCode || ''}}
-              </mat-card-title>
-  </mat-grid-tile>
-  <mat-grid-tile [colspan]="3" [rowspan]="4" *ngIf="roleSelected" [ngClass]="dataSource.data.length?'':'ghostElement'" >
+  
+  <mat-grid-tile [colspan]="3" [rowspan]="17" *ngIf="roleSelected" [ngClass]="dataSource.data.length?'':'ghostElement'" >
     <mat-grid-tile-header class="table-header">
           Users with Role:
     </mat-grid-tile-header>
     
-  <div class="example-container-roles mat-elevation-z8"  [ngClass]="dataSource.data.length?'':'ghostElement'" >
+  
   <mat-table class="scroll-box" #table [dataSource]="dataSource" matSort>
     <!-- Last Name Column -->
     <ng-container matColumnDef="NameLast">
@@ -35,7 +38,7 @@
     </ng-container>
     <!-- Delete Column -->
     <ng-container matColumnDef="weight">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> <h3>Remove</h3>  </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef> <h3>Remove</h3>  </mat-header-cell>
       <mat-cell *matCellDef="let element"> <i (click)="removeUser(element)" class="material-icons" style="color:red;">clear</i> </mat-cell>
     </ng-container>
 
@@ -43,7 +46,7 @@
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
   </mat-table>
 
-</div>
+
 
 <!-- <mat-grid-tile-footer [ngClass]="!dataSource.data.length?'':'ghostElement'" class="table-header">
     No Data Available

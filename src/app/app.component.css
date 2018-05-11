@@ -4,6 +4,32 @@ vertical-menu {
     overflow-y: auto;
 }
 
+.pull-left{
+    float:left!important;
+}
+
+.pull-right{
+    float:right!important;
+}
+
+.role-head > figure {
+    justify-content: flex-start !important;
+    height:80%!important;
+}
+
+.mat-sort-header-arrow{
+margin: 25px 0 0 6px !important;
+}
+
+.mat-row{
+    min-height: 40px!important;
+}
+
+.mat-drawer-content {
+    overflow-y: hidden!important;
+    overflow-x:auto;
+}
+
 .vertical-menu a {
     background-color: #eee;
     color: black;

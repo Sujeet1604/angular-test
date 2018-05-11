@@ -19,10 +19,25 @@ const user_roles=[
   {RoleId:'17', RoleName: 'Role 7', RoleCode:'role-17'}
 ]
 
-const ROLE_DATA = [{ "UserId": 1, "Username": "Chintamo", "Email": "chintala.monica12@gmail.com", "NameFirst": "Monica", "NameLast": "Chintala", "Phone": "000000000" },
+const ROLE_DATA = [
+  
+  { "UserId": 1, "Username": "Chintamo", "Email": "chintala.monica12@gmail.com", "NameFirst": "Monica", "NameLast": "Chintala", "Phone": "000000000" },
     { "UserId": 3, "Username": "Chinta66", "Email": "chintala.monica152@gmail.com", "NameFirst": "Monica", "NameLast": "Chintala", "Phone": "000000000" },
     { "UserId": 4, "Username": "Monica123", "Email": "Monica.test@gmail.com", "NameFirst": "Monica", "NameLast": "ccgcgcgcg", "Phone": "cffgc" },
-{ "UserId": 5, "Username": "Hello123", "Email": "Heel@gmail.com", "NameFirst": "Heelo", "NameLast": "123", "Phone": "3387844jhfjf" }]
+{ "UserId": 5, "Username": "Hello123", "Email": "Heel@gmail.com", "NameFirst": "Heelo", "NameLast": "123", "Phone": "3387844jhfjf" },
+  { "UserId": 1, "Username": "Chintamo", "Email": "chintala.monica12@gmail.com", "NameFirst": "Monica", "NameLast": "Chintala", "Phone": "000000000" },
+    { "UserId": 3, "Username": "Chinta66", "Email": "chintala.monica152@gmail.com", "NameFirst": "Monica", "NameLast": "Chintala", "Phone": "000000000" },
+    { "UserId": 4, "Username": "Monica123", "Email": "Monica.test@gmail.com", "NameFirst": "Monica", "NameLast": "ccgcgcgcg", "Phone": "cffgc" },
+{ "UserId": 5, "Username": "Hello123", "Email": "Heel@gmail.com", "NameFirst": "Heelo", "NameLast": "123", "Phone": "3387844jhfjf" },
+  { "UserId": 1, "Username": "Chintamo", "Email": "chintala.monica12@gmail.com", "NameFirst": "Monica", "NameLast": "Chintala", "Phone": "000000000" },
+    { "UserId": 3, "Username": "Chinta66", "Email": "chintala.monica152@gmail.com", "NameFirst": "Monica", "NameLast": "Chintala", "Phone": "000000000" },
+    { "UserId": 4, "Username": "Monica123", "Email": "Monica.test@gmail.com", "NameFirst": "Monica", "NameLast": "ccgcgcgcg", "Phone": "cffgc" },
+{ "UserId": 5, "Username": "Hello123", "Email": "Heel@gmail.com", "NameFirst": "Heelo", "NameLast": "123", "Phone": "3387844jhfjf" }
+
+
+
+
+]
 
 const ROLES = [{ "RoleId": 1, "RoleName": "test123", "RoleCode": "heeloo" }, { "RoleId": 4, "RoleName": "testssss", "RoleCode": "dlkudgdgdgdd" },
     { "RoleId": 5, "RoleName": "testsdd", "RoleCode": "dlkudddgdgdgdd" }, { "RoleId": 6, "RoleName": "tddestsdd", "RoleCode": "dlkudddg12dgdgdd" },    
